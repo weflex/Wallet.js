@@ -1,0 +1,3 @@
+[submodule "build/orgmk"]
+	path = build/orgmk
+	url = https://github.com/scottoasis/orgmk.git

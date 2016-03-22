@@ -1,0 +1,34 @@
+#+TITLE:   Wallet.js
+#+AUTHOR:  WeFlex Engineers
+#+EMAIL:   engineer@theweflex.com
+#+STARTUP: align indent
+#+TODO:    DRAFT PROPOSE | FINALIZED
+
+General Purpose Payment Bridge
+
+* Preface
+** Keyword Conventions
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+interpreted as described in [[http://tools.ietf.org/html/rfc2119][RFC 2119]].
+
+** Typographic Conventions
+In this document, we use the following typographic conventions:
+
+*** /Italic/
+Used for URLs, command names, MIME types, new terms where they are defined, and
+emphasis
+
+*** ~Constant width~
+Used for computer output, functions, code, and any literal text
+
+* Overview
+** Defining A Payment Process
+*** PrePay Ticket
+**** Verified Ticket
+**** Payed Ticket
+* Payment Strategies
+** Strategy Requirements
+** Initializing a Strategy (Using Ping++ As Example)
+* Working with Internet Open Trading Protocol

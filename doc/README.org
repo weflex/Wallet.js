@@ -3,14 +3,15 @@
 #+EMAIL:   engineer@theweflex.com
 #+STARTUP: align indent
 #+TODO:    DRAFT PROPOSE | FINALIZED
+#+OPTIONS: H:5
 
-General Purpose Payment Bridge
+Wallet.js: General Purpose Payment Bridge
 
 * Preface
 ** Keyword Conventions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be 
 interpreted as described in [[http://tools.ietf.org/html/rfc2119][RFC 2119]].
 
 ** Typographic Conventions
@@ -23,12 +24,54 @@ emphasis
 - ~Constant width~
 Used for computer output, functions, code, and any literal text
 
-* Overview
-** Defining A Payment Process
-*** PrePay Ticket
-**** Verified Ticket
-**** Payed Ticket
+* Payment Process
+
+** Payment Roles
+
+In a mordern Online Payment Process, there're three roles: /Customer/, /Payment
+Handler/ and /Service Provider/. Payment Handlers are those who provide and sell
+products and services. Customers are those purchasing goods or services from
+Merchants. Sometinmes Payment Hanlders are also refered as /Merchants/. Finally,
+Service Providers are banks or companies providing Online Payment Service.
+
+** Definition
+
+A general image of a Online Payment could be:
+
+1. Customer submits a Request Form to Payment Handler; This Form
+
+   + MUST specify which product to purchase and quantity to purchase;
+   + MAY specify from Customer's identity;
+
+2. With these information, Payment Handler then forges a Payment Ticket object
+   and send it to Service Provider; While forging this Ticket, Payment Hanlder
+
+   - MUST specify Payment Fee; Here Payment Fee is defined as a total amount of
+     money Customer pays Merchant for the products.
+   - MAY specify a /Callback URI/. Through this URI Service Provider could
+     notify Payment Handler once the Payment Process is closed;
+
+   Service Provider then send this Payment Ticket back to Customer for
+   confirmation;
+
+3. Once Customer confirms this Payment Ticket, Service Provider process this
+   Ticket, deduct Payment Fee from Customer's account and then MAY send a
+   /success/ request to Callback URI; Or Customer MAY reject this Payment
+   Ticket, in which case Payment Fee is not deducted and a /failure/ request is
+   made to Callback URI;
+
+4. Payment Handler MAY inquire Service Provide for progress and status of a
+   specific Payment Ticket;
+
+5. While Service Provider is processing a Payment Ticket, errors MAY occur. A
+   typical error is that Customer's account balance is insufficient to deduct
+   Paymetn Fee from. Payment Handler SHOULD be responsible handling these error
+   situations while an /error/ request to Callback URI is OPTIONAL.
+
+** Payment Ticket
+*** Identifing Ticket
+* Refund
 * Payment Strategies
 ** Strategy Requirements
 ** Initializing a Strategy (Using Ping++ As Example)
-* Working with Internet Open Trading Protocol
+* Working with Internet Open Trading Protocol (IOTP)

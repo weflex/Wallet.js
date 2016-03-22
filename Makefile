@@ -1,2 +1,2 @@
-README.md:
+README.md: doc/README.org
 	@make -f Document.mk $@

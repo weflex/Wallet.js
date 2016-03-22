@@ -16,11 +16,11 @@ interpreted as described in [[http://tools.ietf.org/html/rfc2119][RFC 2119]].
 ** Typographic Conventions
 In this document, we use the following typographic conventions:
 
-*** /Italic/
+- /Italic/
 Used for URLs, command names, MIME types, new terms where they are defined, and
 emphasis
 
-*** ~Constant width~
+- ~Constant width~
 Used for computer output, functions, code, and any literal text
 
 * Overview
